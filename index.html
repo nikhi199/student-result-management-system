@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="mb-4 text-center">Student Result Management System</h1>
+
+<div class="row g-4">
+
+<div class="col-md-6">
+    <div class="card shadow-sm h-100">
+        <div class="card-body d-flex flex-column">
+            <h3 class="card-title">Student Panel</h3>
+            <p class="card-text">
+                Register or login and Join Free and Offline paid Courses. Book your slot.
+            </p>
+            <div class="mt-auto">
+                <a class="btn btn-primary me-2" href="{{ url_for('student_register') }}">Student Registration</a>
+                <a class="btn btn-outline-primary" href="{{ url_for('student_login') }}">Student Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="col-md-6">
+    <div class="card shadow-sm h-100">
+        <div class="card-body d-flex flex-column">
+            <h3 class="card-title">Admin Panel</h3>
+            <p class="card-text">
+                Admin can manage students, courses, and record student results.
+            </p>
+            <div class="mt-auto">
+                <a class="btn btn-danger me-2" href="{{ url_for('admin_register') }}">Admin Registration</a>
+                <a class="btn btn-outline-danger" href="{{ url_for('admin_login') }}">Admin Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+{% endblock %}
