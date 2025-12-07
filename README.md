@@ -83,16 +83,4 @@ pip install flask flask_sqlalchemy pyodbc
 ---http://localhost:5000
 
 
-## 📸 Project Screenshots
-     
-### 🔐 Login Page
-![Dashboard](https://github.com/nikhi199/student-result-management-system/blob/main/Screenshot%202025-12-02%20022300.png?raw=true/dashboard.png)
 
-### 🏠 Student Dashboard
-![Student Dashboard](screenshots/dashboard.png)
-
-### 📚 Manage Courses (Admin)
-![Manage Courses](screenshots/manage_courses.png)
-
-### 📝 Result Page
-![Result Page](screenshots/results.png)
