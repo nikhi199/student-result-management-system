@@ -86,7 +86,7 @@ pip install flask flask_sqlalchemy pyodbc
 ## 📸 Project Screenshots
      
 ### 🔐 Login Page
-![Dashboard](/dashboard.png)
+![Dashboard](https://github.com/nikhi199/student-result-management-system/blob/main/Screenshot%202025-12-02%20022300.png?raw=true/dashboard.png)
 
 ### 🏠 Student Dashboard
 ![Student Dashboard](screenshots/dashboard.png)
