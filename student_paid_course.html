@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title mb-3">Join Paid Course</h2>
+
+                <p><strong>Name:</strong> {{ student.name }}</p>
+                <p><strong>Age:</strong> {{ student.age }}</p>
+                <p><strong>Gender:</strong> {{ student.gender }}</p>
+
+                <form method="post">
+
+                    <div class="mb-3">
+                        <label class="form-label">Select Course</label>
+
+                        <select name="course_id" class="form-select" required>
+                            <option value="">--Select--</option>
+
+                            {% for c in paid_courses %}
+                                <option value="{{ c.id }}">
+                                    {{ c.name }}
+                                    {% if c.price %} - Rs. {{ c.price }} {% endif %}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Join Date</label>
+                        <input type="date" name="join_date" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Address</label>
+                        <textarea name="address" class="form-control" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100">Join Paid Course</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

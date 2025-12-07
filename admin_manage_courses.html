@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">Manage Courses</h2>
+
+<div class="row">
+    <div class="col-md-5">
+        <div class="card shadow-sm mb-3">
+            <div class="card-body">
+                <h4 class="card-title mb-3">Add New Course</h4>
+
+                <form method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Course Name</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Type</label>
+                        <select name="type" class="form-select" required>
+                            <option value="free">Free</option>
+                            <option value="paid">Paid</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                    <label class="form-label">Course Price (Paid courses only)</label>
+                    <input type="number" name="price" class="form-control">
+                </div>
+
+
+
+                    <div class="mb-3">
+                        <label class="form-label">YouTube Link (for free course)</label>
+                        <input type="url" name="youtube_link" class="form-control">
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100">Add Course</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h4 class="card-title mb-3">Existing Courses</h4>
+
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>YouTube</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for c in courses %}
+                        <tr>
+                            <td>{{ c.id }}</td>
+                            <td>{{ c.name }}</td>
+                            <td>{{ c.type }}</td>
+                            <td>
+                                {% if c.youtube_link %}
+                                    <a href="{{ c.youtube_link }}" target="_blank" class="btn btn-sm btn-outline-primary">Link</a>
+                                {% else %}
+                                    <span class="text-muted">-</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="{{ url_for('admin_edit_course', course_id=c.id) }}" 
+                            class="btn btn-sm btn-primary">Edit</a>
+
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

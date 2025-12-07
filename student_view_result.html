@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="card shadow-sm mb-3">
+            <div class="card-body">
+                <h2 class="card-title mb-3">View Result</h2>
+
+                <form method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Enter Student Name</label>
+                        <input type="text" name="search_name" value="{{ search_name }}" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if found_student %}
+    <div class="card shadow-sm mb-3">
+        <div class="card-body">
+            <h3>Student Profile</h3>
+            <p><strong>Name:</strong> {{ found_student.name }}</p>
+            <p><strong>Gender:</strong> {{ found_student.gender }}</p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h3>Results</h3>
+            {% if student_results %}
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Marks (out of 100)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for r, c in student_results %}
+                        <tr>
+                            <td>{{ c.name }}</td>
+                            <td>{{ r.marks }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No results found for this student.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="card-title mb-3">Add / Edit Result</h2>
+
+                <form method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Select Student</label>
+                        <select name="student_id" class="form-select" required>
+                            <option value="">--Select--</option>
+                            {% for s in students %}
+                                <option value="{{ s.id }}">{{ s.name }} ({{ s.email }})</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Select Paid Course</label>
+                        <select name="course_id" class="form-select" required>
+                            <option value="">--Select--</option>
+                            {% for c in paid_courses %}
+                                <option value="{{ c.id }}">{{ c.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Marks (out of 100)</label>
+                        <input type="number" name="marks" min="0" max="100"
+                               class="form-control" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100">Save Result</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">Admin Dashboard</h2>
+
+<div class="row g-4 mb-4">
+    <div class="col-md-3">
+        <div class="card shadow-sm border-primary">
+            <div class="card-body text-center">
+                <h6 class="text-muted">Total Students</h6>
+                <h3>{{ total_students }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-success">
+            <div class="card-body text-center">
+                <h6 class="text-muted">Total Courses</h6>
+                <h3>{{ total_courses }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-info">
+            <div class="card-body text-center">
+                <h6 class="text-muted">Free Enrollments</h6>
+                <h3>{{ free_students }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm border-warning">
+            <div class="card-body text-center">
+                <h6 class="text-muted">Paid Enrollments</h6>
+                <h3>{{ paid_students }}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-3">
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Manage Students</h5>
+                <p class="card-text">View students and their course enrollments.</p>
+                <a href="{{ url_for('admin_manage_students') }}" class="btn btn-outline-primary mt-auto">Open</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Manage Courses</h5>
+                <p class="card-text">Add or edit free and paid courses.</p>
+                <a href="{{ url_for('admin_manage_courses') }}" class="btn btn-outline-success mt-auto">Open</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Add / Edit Result</h5>
+                <p class="card-text">Assign marks to students for paid courses.</p>
+                <a href="{{ url_for('admin_add_result') }}" class="btn btn-outline-secondary mt-auto">Open</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
