@@ -71,3 +71,15 @@ The system uses **SQL Server** with the following main tables:
 ```bash
 git clone https://github.com/yourusername/student-result-management-system.git
 
+### 2.Installation Required python libraries
+pip install flask flask_sqlalchemy pyodbc
+
+###3.Configure SQL Server Connection
+
+### 4.Run the application
+--python app.py
+
+###5. Then Open
+---http://localhost:5000
+
+
