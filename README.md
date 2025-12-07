@@ -36,3 +36,38 @@ The system uses **SQL Server** with the following main tables:
 - **Result**
 
 ### 🔗 ER Diagram (Conceptual Overview)
+
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend
+- HTML  
+- CSS  
+- Bootstrap  
+- JavaScript  
+
+### Backend
+- Python  
+- Flask Framework  
+- Jinja2 Templates  
+
+### Database
+- SQL Server  
+- SQLAlchemy ORM  
+- pyodbc Driver  
+
+### Tools
+- Visual Studio Code  
+- Git & GitHub  
+- Browser (Chrome/Edge)
+
+---
+
+## ⚙️ Installation & Setup
+
+### 📥 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/student-result-management-system.git
+
