@@ -82,5 +82,5 @@ pip install flask flask_sqlalchemy pyodbc
 ###5. Then Open
 ---http://localhost:5000
 
-<img width="1920" height="1080" alt="Dashboard" src="https://github.com/user-attachments/assets/130ea377-6aa1-4db5-94ca-f6e64c60e310" />
+
 
