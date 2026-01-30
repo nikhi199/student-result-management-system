@@ -84,6 +84,6 @@ pip install flask flask_sqlalchemy pyodbc
 
 ### Project Screenshorts
 login page
-![Login Page](https://github.com/nikhi199/student-result-management-system/blob/main/Screenshot%202025-12-02%20022300.png?raw=true)
+![Dashboard](https://github.com/nikhi199/student-result-management-system/blob/main/Dashboard.png?raw=true)
 
 
